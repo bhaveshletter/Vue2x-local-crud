@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>		
+	</title>
+
+  <script src="./lib/vue2.5.11.js"></script>  
+</head>
+
+<body>
+  <div id="movie-app">
+    <h3>
+      {{ message }}
+    </h3>
+
+    <div>
+      <p>
+        CRUD by buttons <br>
+        <button v-on:click='addButton'>
+          Add
+        </button>
+        <button v-on:click='updateButton'>
+          Update
+        </button>      
+        <button v-on:click='deleteButton'>
+          Delete
+        </button>
+      </p>
+      <ul>
+        <li v-for="item in list">
+          <b> Sr. Id: </b> {{ item.id }},
+          <b> Name: </b> {{ item.name }},
+          <b> Type: </b> {{ item.type }}
+        </li>
+      </ul>
+    </div>
+
+  </div>
+</body>
+</html>
+
+<script src="./lib/init.js"></script>
