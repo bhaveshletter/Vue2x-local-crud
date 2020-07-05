@@ -5,15 +5,14 @@
 	<title>		
 	</title>
 
-  <script src="./lib/vue2.5.11.js"></script>  
+  <script src="./lib/vue2.6.11.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios@0.12.0/dist/axios.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lodash@4.13.1/lodash.min.js"></script>
 </head>
 
-<body>
-  <div id="movie-app">
-    <h3>
-      {{ message }}
-    </h3>
+<body>  
 
+  <div id="movie-app">
     <div>
       <p>
         CRUD by buttons <br>
@@ -27,16 +26,84 @@
           Delete
         </button>
       </p>
+
+      <form v-on:submit.prevent='addNewMovie'>
+        <label for='name'>Add Movie</label>
+        <input v-model='name' id='name' placeholder='Enter new movie name.'>
+
+        <input type="radio" id='fiction' value="Fiction" v-model='type'>
+        <label for='fiction'> Fiction </label>
+        <input type="radio" id='non-fiction' value="Non fiction" v-model='type'>
+        <label for="non-fiction"> Non fiction </label>
+
+        <button> Add </button>
+      </form>
+
       <ul>
-        <li v-for="item in list">
-          <b> Sr. Id: </b> {{ item.id }},
-          <b> Name: </b> {{ item.name }},
-          <b> Type: </b> {{ item.type }}
-        </li>
+        <div v-bind:class="[class1, class2]">  <!--  v-bind:style="{ display: ['-webkit-box', 'flex', '-ms-flexbox'] }"
+        This will only render the last value in the array which the browser supports. In this example,
+        will render display: flex for browsers that support the unprefixed version of flexbox. -->
+          <movie-info v-for="item in list" v-bind:movie="item" v-bind:key="item.id">
+          </movie-info>
+        </div>
       </ul>
+
+      <div v-for="value in object">
+        {{value}}
+      </div>
+
+      <div v-for="(value, key) in object">
+        {{key}}: {{value}}
+      </div>
+
+      <div v-for="(value, key, index) in object">
+        {{index}}. {{key}}: {{value}}
+      </div>
+
+      <div v-for="ele in even(arrList)">
+        Even no {{ele}}
+      </div>
+    </div>
+  </div>
+
+  <div id='dynamic-title'>
+    <!-- v-once will not allow to change once mounted -->
+    <h3 v-bind:title="title" v-once>
+      {{ message }}
+      <br/>
+      {{ computedProp }}
+    </h3>
+
+    <p v-html="rawHtmlStr">
+    </p>
+
+    <p @click='vue260plus'> Shorthand of directive </p>    
+
+    <counter-button></counter-button>
+    <counter-button></counter-button>
+
+    <div>
+      {{ firstname }} <br/>
+      {{ lastname }} <br/>
+      {{ fullname }}
     </div>
 
+    <div v-bind:class="classObject">
+      class Object
+    </div>
   </div>
+
+  <div id='que-ans-watch'>
+    <p>
+      Type your question:
+      <input v-model='question'>
+    </p>
+    <p>
+      {{answer}}
+      <img v-bind:src="img_cdn" />
+    </p>
+  </div>
+
 </body>
 </html>
 

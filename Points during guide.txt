@@ -1,0 +1,3 @@
+Vue.js 2.x
+
+Transition effects: when elements are inserted, updated and removed by Vue
