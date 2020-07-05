@@ -1,5 +1,6 @@
 Vue2.x
   Create Read Update and Delete oprations with db.
+  Example of many other Vue.js concepts like components, computed, watch, reactive states, etc.
 
   NOTE: Once you restart or reopen app then data will be reset.
 
