@@ -2,6 +2,8 @@
 <html>
 
 <head>
+  <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+  <meta content="utf-8" http-equiv="encoding">  
 	<title>		
 	</title>
 
@@ -137,6 +139,7 @@
       <input v-model='question'>
     </p>
     {{answer}}
+    <br>
     <span v-for='item in photos' v-bind:key='item.id'>
       {{item.title}}
       <img v-bind:src='item.thumbnailUrl' />  
