@@ -39,6 +39,7 @@
 
   <div id="movie-app">
     <div>
+<!-- START CRUD operations by button -->
       <p>
         CRUD by buttons <br>
         <button v-on:click='addButton'>
@@ -51,7 +52,9 @@
           Delete
         </button>
       </p>
+<!-- END CRUD operations by button -->
 
+<!-- START Add operation by form -->
       <form v-on:submit.prevent='addNewMovie'>
         <label for='name'>Add Movie</label>
         <input v-model='name' id='name' placeholder='Enter new movie name.'>
@@ -63,7 +66,9 @@
 
         <button> Add </button>
       </form>
+<!-- END Add operation by form -->
 
+<!-- START Movies listing -->
       <ul>
         <div v-bind:class="[class1, class2]">  <!--  v-bind:style="{ display: ['-webkit-box', 'flex', '-ms-flexbox'] }"
         This will only render the last value in the array which the browser supports. In this example,
@@ -72,7 +77,9 @@
           </movie-info>
         </div>
       </ul>
+<!-- END Movies listing -->
 
+<!--
       <div v-for="value in object">
         {{value}}
       </div>
@@ -88,17 +95,20 @@
       <div v-for="ele in even(arrList)">
         Even no {{ele}}
       </div>
+-->
     </div>
   </div>
 
+<!-- START initialize custom component dynamically with data from public APIs -->
   <div id='dynamic-component'>
     <button v-for='tab in tabs' v-bind:key='tab' v-bind:class="['tab-button', { active: currentTab === tab }]" v-on:click='currentTab = tab'>
       {{tab}}
     </button>
     <component v-bind:is='currentTabComponent' class='tab'></component>
   </div>
+<!-- END initialize custom component dynamically with data from public APIs -->
 
-  <br> <br>
+<!--   <br> <br>
 
   <div id='dynamic-title'>
     <search-input v-model='searchQ'></search-input> {{searchQ}}    
@@ -107,7 +117,6 @@
       Something bad happened.  
     </alert-box>
 
-    <!-- v-once will not allow to change once mounted -->
     <h3 v-bind:title="title" v-once>
       {{ message }}
       <br/>
@@ -131,7 +140,7 @@
     <div v-bind:class="classObject">
       class Object
     </div>
-  </div>
+  </div> -->
 
   <div id='que-ans-watch'>
     <p>
