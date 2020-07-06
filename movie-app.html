@@ -133,13 +133,14 @@
 
   <div id='que-ans-watch'>
     <p>
-      Type your question:
+      Type anything which include ?:
       <input v-model='question'>
     </p>
-    <p>
-      {{answer}}
-      <img v-bind:src="img_cdn" />
-    </p>
+    {{answer}}
+    <span v-for='item in photos' v-bind:key='item.id'>
+      {{item.title}}
+      <img v-bind:src='item.thumbnailUrl' />  
+    </span>
   </div>
 
 </body>
