@@ -7,6 +7,6 @@
 
   You can uncommented codes in Vue2x-local-crud/movie-app.html & can check respected code in Vue2x-local-crud/lib/init.js to see syntactic effects.
 
-  ### NOTE: Data get reset once you restart, refresh or reopen app.
+  ### NOTE: Data gets reset once you restart, refresh or reopen app.
 
   Double click on Vue2x-local-crud/movie-app.html or open iVue2x-local-crud/movie-app.html in browser 
