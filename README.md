@@ -1,7 +1,7 @@
-Vue2.x
-    Simplest app during Vue.js go through first time ....
+# Vue2.x
+    ## Simplest app during Vue.js go through first time ....
 
-    Create Read Update and Delete oprations with db.
+    Create Read Update and Delete oprations without db.
 
     Example of many other Vue.js concepts like components, computed, watch, reactive & transition effects, etc.
 
