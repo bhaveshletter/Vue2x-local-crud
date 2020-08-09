@@ -9,4 +9,4 @@
 
   ### NOTE: Data gets reset once you restart, refresh or reopen app.
 
-  Double click on Vue2x-local-crud/movie-app.html or open iVue2x-local-crud/movie-app.html in browser 
+  Double click on Vue2x-local-crud/movie-app.html or open Vue2x-local-crud/movie-app.html in browser 
